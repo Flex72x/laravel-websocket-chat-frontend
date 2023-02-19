@@ -3,4 +3,9 @@ export default defineNuxtConfig({
     css: [
         '~/assets/css/app.css'
     ],
+    runtimeConfig: {
+        public: {
+            websocketURL: process.env.websocketURL
+        }
+    }
 })

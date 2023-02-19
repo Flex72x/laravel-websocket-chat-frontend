@@ -44,7 +44,9 @@ const messagesList = ref(null)
 let socket
 
 if (process.client) {
-  socket = new WebSocket('ws://192.168.1.73:8090')
+  const config = useRuntimeConfig()
+
+  socket = new WebSocket(config.public.websocketURL)
 
   socket.onopen = () => {
     isConnected.value = true
